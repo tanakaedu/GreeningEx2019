@@ -228,6 +228,12 @@ namespace GreeningEx2019
             // フェードイン
             yield return Fade.StartFade(Fade.FadeStateType.In, fadeTime);
 
+            //フェードイン完了処理を呼び出す
+            for(int i=0;i<loadingSceneManagerCount;i++)
+            {
+                loadingSceneManagers[i].OnFadeInDone();
+            }
+
             // シーン切り替え完了
             loadingSceneOperationCount = 0;
             loadingSceneManagerCount = 0;
