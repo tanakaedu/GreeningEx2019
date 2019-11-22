@@ -28,7 +28,7 @@ namespace GreeningEx2019
     /// <item>SceneManagerBaseのOnFadeInDone()を呼び出す</item>
     /// <item>シーン切り替え処理を終了</item>
     /// </list>
-    /// 
+    ///
     /// </summary>
     public class SceneChanger : MonoBehaviour
     {
@@ -228,8 +228,8 @@ namespace GreeningEx2019
             // フェードイン
             yield return Fade.StartFade(Fade.FadeStateType.In, fadeTime);
 
-            //フェードイン完了処理を呼び出す
-            for(int i=0;i<loadingSceneManagerCount;i++)
+            // フェードイン完了処理を呼び出す
+            for (int i = 0; i < loadingSceneManagerCount; i++)
             {
                 loadingSceneManagers[i].OnFadeInDone();
             }
