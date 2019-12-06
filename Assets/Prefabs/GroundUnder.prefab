@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4269892110473912335}
   - component: {fileID: 4269892110473912332}
   m_Layer: 0
-  m_Name: GroundDown
+  m_Name: GroundUnder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,6 +111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 87e3e5e532326264aa0c3d8dc16430a1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87e3e5e532326264aa0c3d8dc16430a1, type: 3}
