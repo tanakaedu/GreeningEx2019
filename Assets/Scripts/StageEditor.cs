@@ -39,7 +39,7 @@ public class StageEditor : MonoBehaviour
     /// <summary>
     /// マウスの場所にあったものとの衝突データ
     /// </summary>
-    RaycastHit[] hits = new RaycastHit[HitMax];
+    readonly RaycastHit[] hits = new RaycastHit[HitMax];
 
     void Update()
     {
@@ -62,17 +62,19 @@ public class StageEditor : MonoBehaviour
                 }
             }
 
+#if UNITY_EDITOR
             if (selectedMapChip != MapType.None)
             {
                 GameObject clone = PrefabUtility.InstantiatePrefab(mapChipPrefabs[(int)selectedMapChip]) as GameObject;
                 clone.transform.position = mpos;
                 clone.transform.SetParent(transform);
             }
+#endif
         }
 
         //カメラ移動
-        cpos.x = cpos.x + (Input.GetAxisRaw("Horizontal") / 4);
-        cpos.y = cpos.y + (Input.GetAxisRaw("Vertical") / 4);
+        cpos.x += (Input.GetAxisRaw("Horizontal") / 4);
+        cpos.y += (Input.GetAxisRaw("Vertical") / 4);
         myCam.transform.position = cpos;
     }
 }
