@@ -73,8 +73,8 @@ public class StageEditor : MonoBehaviour
         }
 
         //カメラ移動
-        cpos.x += (Input.GetAxisRaw("Horizontal") / 4);
-        cpos.y += (Input.GetAxisRaw("Vertical") / 4);
+        cpos.x += (Input.GetAxisRaw("Horizontal") / 10);
+        cpos.y += (Input.GetAxisRaw("Vertical") / 10);
         myCam.transform.position = cpos;
     }
 }
