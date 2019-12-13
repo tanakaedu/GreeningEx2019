@@ -29,6 +29,7 @@ public class DandelionFlower : MonoBehaviour
     public void ToFluff()
     {
         state = 2;
+        lastTime = Time.time;
     }
     private void FixedUpdate()
     {
