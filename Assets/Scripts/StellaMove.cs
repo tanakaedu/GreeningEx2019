@@ -7,9 +7,9 @@ public class StellaMove : MonoBehaviour
     [Tooltip("移動速度(秒速)"), SerializeField]
     float moveSpeed = 3f;
     [Tooltip("重力加速度(速度/秒)"), SerializeField]
-    float gravityAdd = 9.81f;
+    float gravityAdd = 20f;
     [Tooltip("ステラの横向きの角度"), SerializeField]
-    float rotateY = 45f;
+    float rotateY = 40f;
 
     /// <summary>
     /// アニメのStateに設定する値

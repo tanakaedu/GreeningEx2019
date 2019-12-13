@@ -43,7 +43,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.98, y: 0.98, z: 0.98}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1263619934323390689
 PrefabInstance:
@@ -52,11 +52,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1263619933716130607}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: c4daedd287ae6c344b5138b9894cfe62,
-        type: 3}
-      propertyPath: m_Name
-      value: stella_rock_before
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c4daedd287ae6c344b5138b9894cfe62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -111,6 +106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c4daedd287ae6c344b5138b9894cfe62,
+        type: 3}
+      propertyPath: m_Name
+      value: stella_rock_before
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4daedd287ae6c344b5138b9894cfe62, type: 3}

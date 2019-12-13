@@ -10,6 +10,11 @@ public class StageEditor : MonoBehaviour
     [SerializeField]
     GameObject[] mapChipPrefabs = null;
 
+    /// <summary>
+    /// 配置するZ座標
+    /// </summary>
+    const float mapZ = 0;
+
     public enum MapType
     {
         None=-1,
@@ -44,11 +49,12 @@ public class StageEditor : MonoBehaviour
     void Update()
     {
         Camera myCam = Camera.main;
-        Vector3 mpos = myCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+        Vector3 mpos = myCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mapZ - myCam.transform.position.z));
         Vector3 cpos = myCam.transform.position;
 
         mpos.x = Mathf.Round(mpos.x);
         mpos.y = Mathf.Round(mpos.y);
+        mpos.z = mapZ;
 
         if (Input.GetMouseButton(0))
         {
@@ -56,7 +62,7 @@ public class StageEditor : MonoBehaviour
             int hitCount = Physics.RaycastNonAlloc(mpos + Vector3.back, Vector3.forward, hits);
             if (hitCount > 0)
             {
-                for (int i=0; i<hitCount;i++)
+                for (int i = 0; i < hitCount; i++)
                 {
                     DestroyImmediate(hits[i].collider.gameObject);
                 }
