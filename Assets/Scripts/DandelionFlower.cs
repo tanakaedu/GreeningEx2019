@@ -13,6 +13,10 @@ public class DandelionFlower : MonoBehaviour
     [SerializeField]
     float insTime = 2;
     float lastTime;
+    [SerializeField]
+    Vector2 direction = new Vector2(0.3f, 0.3f);
+    [SerializeField]
+    float FluffLifeTime = 5f;
 
     private void Awake()
     {
@@ -37,8 +41,9 @@ public class DandelionFlower : MonoBehaviour
         {
             if (Time.time - lastTime > insTime)
             {
-                Instantiate(Fluff, transform.position + fluffOffset, Quaternion.identity);
+                GameObject Go = Instantiate(Fluff, transform.position + fluffOffset, Quaternion.identity);
                 lastTime = Time.time;
+                Go.GetComponent<Fluff>().init(direction, FluffLifeTime);
             }
         }
     }

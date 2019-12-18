@@ -12,6 +12,16 @@ public class FollowCamera : MonoBehaviour
     Transform playerTransform = null;
     Vector3 camToPlayer;
 
+    /// <summary>
+    /// ターゲットを設定
+    /// </summary>
+    /// <param name="tg">目的のオブジェクトのトランスフォーム</param>
+    public void SetTarget(Transform tg)
+    {
+        playerTransform = tg;
+        camToPlayer = playerTransform.position - transform.position;
+    }
+
     private void Awake()
     {
         GameObject go = GameObject.FindGameObjectWithTag("Player");
@@ -19,8 +29,7 @@ public class FollowCamera : MonoBehaviour
         {
             return;
         }
-        playerTransform = go.transform;
-        camToPlayer = playerTransform.position - transform.position;
+        SetTarget(go.transform);
     }
 
     private void LateUpdate()

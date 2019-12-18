@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8356661317230378194}
   - component: {fileID: 2039278301}
+  - component: {fileID: 1849251160}
+  - component: {fileID: 4727631844676820929}
+  - component: {fileID: 7932690344015368215}
   m_Layer: 0
   m_Name: Dandelion
   m_TagString: Untagged
@@ -40,11 +43,59 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8356661317230378195}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 5.52, z: 1}
-  m_Center: {x: 0, y: 2.06, z: 0}
+  m_Size: {x: 0.8, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 0.55, z: 0}
+--- !u!95 &1849251160
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356661317230378195}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d3468d4c6eb009409445b52b85b3aee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4727631844676820929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356661317230378195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f137d82699afb41a55648700028721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  removeHight: 10
+--- !u!54 &7932690344015368215
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356661317230378195}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &8356661316296363205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,11 +103,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8356661317230378194}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 14401edde2252704890a68feafe26e7b,
-        type: 3}
-      propertyPath: m_Name
-      value: dandelion_model
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 14401edde2252704890a68feafe26e7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -111,6 +157,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 14401edde2252704890a68feafe26e7b,
+        type: 3}
+      propertyPath: m_Name
+      value: dandelion_model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14401edde2252704890a68feafe26e7b, type: 3}

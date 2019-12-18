@@ -7,22 +7,21 @@ namespace GreeningEx2019
 {
     public class TitleManager : SceneManagerBase
     {
-
         public override void OnFadeOutDone()
         {
             SoundController.PlayBGM(SoundController.BgmType.Title, true);
-            SceneManager.SetActiveScene(gameObject.scene);            
+            SceneManager.SetActiveScene(gameObject.scene);
         }
 
-#if DEBUG
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Fade.IsFading) return;
+
+            if (GameParams.IsActionAndWaterButtonDown)
             {
                 SoundController.Play(SoundController.SeType.Click);
                 SceneChanger.ChangeScene(SceneChanger.SceneType.StageSelect);
             }
         }
-#endif
     }
 }

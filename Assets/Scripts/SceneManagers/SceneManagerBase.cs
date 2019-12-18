@@ -16,6 +16,9 @@ namespace GreeningEx2019
         /// </summary>
         public void Awake()
         {
+#if UNITY_EDITOR
+            if (SceneChanger.IsBooting) return;
+#endif
             SceneChanger.AwakeDone(this);
         }
 

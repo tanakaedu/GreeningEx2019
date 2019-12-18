@@ -75,7 +75,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378182585665365299}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.45
   m_Height: 1.1
@@ -88,11 +88,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 378182585665365298}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 56fb6175eb67f34488fd65a712b14f7e,
-        type: 3}
-      propertyPath: m_Name
-      value: stella_mushroomLittle
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 56fb6175eb67f34488fd65a712b14f7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -163,6 +158,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 56fb6175eb67f34488fd65a712b14f7e,
+        type: 3}
+      propertyPath: m_Name
+      value: stella_mushroomLittle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56fb6175eb67f34488fd65a712b14f7e, type: 3}
 --- !u!4 &4631151499041880834 stripped
@@ -178,6 +178,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 378182585665365298}
     m_Modifications:
+    - target: {fileID: 2989514297727979090, guid: aaebf245e55ca4240830fbcbadd1bbbb,
+        type: 3}
+      propertyPath: m_Name
+      value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989514297727979090, guid: aaebf245e55ca4240830fbcbadd1bbbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2989514297727979089, guid: aaebf245e55ca4240830fbcbadd1bbbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -231,16 +241,6 @@ PrefabInstance:
     - target: {fileID: 2989514297727979089, guid: aaebf245e55ca4240830fbcbadd1bbbb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989514297727979090, guid: aaebf245e55ca4240830fbcbadd1bbbb,
-        type: 3}
-      propertyPath: m_Name
-      value: Mushroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989514297727979090, guid: aaebf245e55ca4240830fbcbadd1bbbb,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7784005370560109611, guid: aaebf245e55ca4240830fbcbadd1bbbb,

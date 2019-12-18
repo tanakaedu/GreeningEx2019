@@ -6,6 +6,7 @@
 - [システム](Documents/System.md)
 - [ステージエディター](Documents/StageEditor.md)
 - [プレイヤー](Documents/Player.md)
+- [苗の生長を制御するGrowスクリプト](Documents/GrowPlant.md)
 
 
 # 使用アセット

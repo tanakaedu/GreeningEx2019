@@ -173,6 +173,8 @@ MonoBehaviour:
   fluffOffset: {x: 0, y: 0.5, z: 0}
   Fluff: {fileID: 8356661317230378195, guid: ac4890ffd9183f043843f4f5fa3ea07d, type: 3}
   insTime: 2
+  direction: {x: 1, y: 1}
+  FluffLifeTime: 5
 --- !u!135 &7105358289731606287
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -271,11 +273,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4446158811706576259}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: f4dc28a6552d3c74d963039301a52ba8,
-        type: 3}
-      propertyPath: m_Name
-      value: stella_tannpopo_kuki_model
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f4dc28a6552d3c74d963039301a52ba8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -346,6 +343,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 16.666664
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f4dc28a6552d3c74d963039301a52ba8,
+        type: 3}
+      propertyPath: m_Name
+      value: stella_tannpopo_kuki_model
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4dc28a6552d3c74d963039301a52ba8, type: 3}
 --- !u!4 &1356252614331840689 stripped
@@ -361,11 +363,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6958156383487943662}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 0450e6b33e32d7940aa2f395e5950378,
-        type: 3}
-      propertyPath: m_Name
-      value: stella_tannpopo_model
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0450e6b33e32d7940aa2f395e5950378,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -435,6 +432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.6666665
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0450e6b33e32d7940aa2f395e5950378,
+        type: 3}
+      propertyPath: m_Name
+      value: stella_tannpopo_model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0450e6b33e32d7940aa2f395e5950378, type: 3}

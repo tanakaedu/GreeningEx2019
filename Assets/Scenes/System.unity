@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 0.11953845, g: 0.2086369, b: 0.21586053, a: 1}
+  m_AmbientEquatorColor: {r: 0.113697045, g: 0.29926133, b: 0.3301887, a: 1}
+  m_AmbientGroundColor: {r: 0.20291919, g: 0.39035246, b: 0.4528302, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -56,7 +56,7 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
-    m_BakeResolution: 40
+    m_BakeResolution: 10
     m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
@@ -96,7 +96,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 9ec822ee39f5bf64f97d87e736e90626,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -167,8 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0062ca14d202848bebabb7456a2c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScene: 2
+  startScene: 0
   fadeTime: 0.5
+  subCamera: {fileID: 963194227}
 --- !u!114 &190469379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f5d418ab7e87249a693f60d0062e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toStageSelect: 0
+  clearedStageCount: 10
 --- !u!82 &190469380
 AudioSource:
   m_ObjectHideFlags: 0

@@ -42,7 +42,7 @@ namespace GreeningEx2019
         /// </summary>
         public enum SceneType
         {
-            None=-1,
+            None = -1,
             Title,
             StageSelect,
             Game,
@@ -53,6 +53,8 @@ namespace GreeningEx2019
         SceneType startScene = SceneType.Title;
         [Tooltip("シーン切り替えにかかる秒数"), SerializeField]
         float fadeTime = 0.5f;
+        [Tooltip("常時、カメラを有効にしておくためのサブカメラ"), SerializeField]
+        Camera subCamera = null;
 
         /// <summary>
         /// 現在のシーン
@@ -107,6 +109,16 @@ namespace GreeningEx2019
         /// 解放するシーンの数
         /// </summary>
         static int unloadSceneCount = 0;
+
+        /// <summary>
+        /// 現在有効なカメラのインスタンス
+        /// </summary>
+        public static Camera activeCamera = null;
+
+        /// <summary>
+        /// 読み込んだシーンの名前
+        /// </summary>
+        static string loadedSceneName = "";
 
         private void Awake()
         {
@@ -170,15 +182,21 @@ namespace GreeningEx2019
             StartCoroutine(SceneChange());
         }
 
-
         /// <summary>
         /// シーン切り替え処理
         /// </summary>
         /// <returns></returns>
         IEnumerator SceneChange()
         {
+            isBooting = false;
+
             // シーンを非アクティブで読み込み開始
-            loadingSceneOperations[loadingSceneOperationCount] = SceneManager.LoadSceneAsync(NextScene.ToString(), LoadSceneMode.Additive);
+            string sceneName = NextScene.ToString();
+            if (NextScene == SceneType.Game)
+            {
+                sceneName = $"Stage{GameParams.SelectedStage+1}";
+            }
+            loadingSceneOperations[loadingSceneOperationCount] = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
             loadingSceneOperations[loadingSceneOperationCount].allowSceneActivation = false;
             loadingSceneOperationCount++;
 
@@ -186,11 +204,13 @@ namespace GreeningEx2019
             yield return Fade.StartFade(Fade.FadeStateType.Out, fadeTime, true);
 
             // 不要になったシーンを解放する
-            if (NowScene != SceneType.None)
+            if (loadedSceneName.Length > 0)
             {
-                unloadSceneOperations[unloadSceneCount] = SceneManager.UnloadSceneAsync(NowScene.ToString());
+                unloadSceneOperations[unloadSceneCount] = SceneManager.UnloadSceneAsync(loadedSceneName);
                 unloadSceneCount++;
             }
+
+            loadedSceneName = sceneName;
 
             // シーン切り替え
             NowScene = NextScene;
@@ -225,6 +245,16 @@ namespace GreeningEx2019
                 loadingSceneManagers[i].OnFadeOutDone();
             }
 
+            // カメラ切り替え
+            if (Camera.main != null)
+            {
+                SetMainCamera(Camera.main);
+            }
+            else
+            {
+                SetSubCamera();
+            }
+
             // フェードイン
             yield return Fade.StartFade(Fade.FadeStateType.In, fadeTime);
 
@@ -240,7 +270,6 @@ namespace GreeningEx2019
             unloadSceneCount = 0;
 
             IsChanging = false;
-            isBooting = false;
             enabled = false;
         }
 
@@ -263,5 +292,28 @@ namespace GreeningEx2019
             loadingSceneManagers[loadingSceneManagerCount] = smb;
             loadingSceneManagerCount++;
         }
+
+        /// <summary>
+        /// 指定のカメラをメインに設定して、サブカメラを無効にする。
+        /// </summary>
+        /// <param name="main"></param>
+        public static void SetMainCamera(Camera main)
+        {
+            activeCamera = main;
+            Instance.subCamera.enabled = false;
+        }
+
+        /// <summary>
+        /// サブカメラに切り替える時に呼び出します。
+        /// </summary>
+        public static void SetSubCamera()
+        {
+            if (Instance.subCamera == null) return;
+
+            activeCamera = Instance.subCamera;
+            Instance.subCamera.enabled = true;
+        }
+
+
     }
 }
