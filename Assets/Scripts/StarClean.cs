@@ -6,6 +6,9 @@ public class StarClean : MonoBehaviour
 {
     [Tooltip("cleanの直下の島の設定用"),SerializeField]
     GameObject[] islands = null;
+
+    //スタート前に設定 → 設定したステージまでの全ステージを緑化
+    //スタート後に設定 → 設定したステージを緑化
     [Tooltip("クリアしたステージ"), SerializeField]
     int cleardStageNum = 0;
     [Tooltip("アニメーション速度"), SerializeField]

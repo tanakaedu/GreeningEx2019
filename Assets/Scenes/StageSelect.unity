@@ -30167,7 +30167,7 @@ MonoBehaviour:
   - {fileID: 9070346297957124785}
   - {fileID: 8449956396068725540}
   - {fileID: 1095381094493148574}
-  cleardStageNum: 10
+  cleardStageNum: 1
   albedoChangeSpeed: 0.025
 --- !u!4 &8302931390890194614
 Transform:
